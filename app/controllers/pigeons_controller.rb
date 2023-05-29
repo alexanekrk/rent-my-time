@@ -27,6 +27,17 @@ class PigeonsController < ApplicationController
 
   def update
     @pigeon = Pigeon.find(params[:id])
+    if @pigeon.update(params_pigeon)
+      redirect_to pingeon_path(@pigeon)
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
+
+  def destroy
+    @pigeon = Pigeon.find(params[:id])
+    @pigeon.destroy
+    redirect_to pingeon_path(@pigeon)
   end
 
   private
