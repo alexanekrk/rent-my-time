@@ -44,7 +44,7 @@ class PigeonsController < ApplicationController
   def destroy
     @pigeon = Pigeon.find(params[:id])
     @pigeon.destroy
-    redirect_to pingeon_path(@pigeon)
+    redirect_to pigeons_path
   end
 
   private
