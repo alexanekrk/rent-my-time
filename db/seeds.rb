@@ -42,6 +42,7 @@ pigeons = []
   pigeon = Pigeon.create!(
     name: Faker::Name.name,
     color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,
+    city: ["Montreal", "London", "Paris", "Tokyo", "Ottawa", "Toronto"].sample,
     age: rand(1..8),
     price: rand(10..100),
     user_id: [pablo, alexane, tom].sample.id
@@ -49,7 +50,6 @@ pigeons = []
   pigeons.push(pigeon)
   puts "Create the pigeon id #{pigeon.id}"
 end
-
 
 10.times do
   booking = Booking.create!(
