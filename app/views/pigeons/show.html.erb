@@ -9,4 +9,5 @@
 
 <%= link_to "Delete",
           pigeon_path(@pigeon),
-          data: { turbo_method: :delete, turbo_confirm: 'Sure?' }%>
+          data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+          class: 'btn btn-danger'%>
