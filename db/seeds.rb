@@ -6,9 +6,10 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "Cleaning users and pigeons from the database..."
+puts "Cleaning users, pigeons, bookings from the database..."
 Pigeon.destroy_all
 User.destroy_all
+Booking.destroy_all
 
 puts "Adding 3 users... Tom, Alexane and Pablo"
 
@@ -35,15 +36,31 @@ tom = User.create(
 
 puts "Adding some pigeons..."
 
+pigeons = []
+
 10.times do
-  pigeon = Pigeon.create(
+  pigeon = Pigeon.create!(
     name: Faker::Name.name,
-    color: %w[grey black yellow blue pink red green orange].sample,
+    color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,
     age: rand(1..8),
     price: rand(10..100),
     user_id: [pablo, alexane, tom].sample.id
   )
+  pigeons.push(pigeon)
   puts "Create the pigeon id #{pigeon.id}"
 end
+
+
+10.times do
+  booking = Booking.create!(
+    date: Date.new,
+    location: Faker::Address.street_address,
+    quantity: rand(1...20),
+    pigeon_id: pigeons.sample.id,
+    user_id: [pablo, alexane, tom].sample.id
+  )
+  puts "Create the booking id #{booking.id}"
+end
+
 
 puts 'All done'

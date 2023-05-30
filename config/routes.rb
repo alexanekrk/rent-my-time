@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   get 'pigeons/my_pigeons', to: 'pigeons#my_pigeons', as: :my_pigeons
-  resources :pigeons
+  resources :pigeons do
+    resources :bookings
+  end
 end
