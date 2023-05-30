@@ -4,4 +4,10 @@ class PagesController < ApplicationController
   def home
     @pigeons = Pigeon.all
   end
+
+  def search
+    @pigeons = Pigeon.all
+    @pigeons = Pigeon.where(city: query)
+    raise
+  end
 end
