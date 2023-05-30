@@ -1,16 +1,20 @@
-<h1>The show page</h1>
-
-
 <div class="container">
 
+  <h1>The show page</h1>
 
-<h2><%= @pigeon.name %></h2>
-<h3><%= @pigeon.color %><h3>
-<h3><%= @pigeon.price  %></h3>
+  <div class="container">
+
+    <h2><%= @pigeon.name %></h2>
+    <h3><%= @pigeon.color %><h3>
+    <h3><%= @pigeon.price  %></h3>
+
+  </div>
+
+  <%= link_to "Edit", edit_pigeon_path(@pigeon) %>
+
+  <%= link_to "Delete",
+            pigeon_path(@pigeon),
+            data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+            class: 'btn btn-danger'%>
 
 </div>
-
-<%= link_to "Delete",
-          pigeon_path(@pigeon),
-          data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
-          class: 'btn btn-danger'%>

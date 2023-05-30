@@ -4,10 +4,12 @@
 
   <ul>
     <% @my_pigeons.each do |pigeon| %>
-      <li><h4><%= pigeon.name %></h4>
+      <li>
+        <h4><%= link_to pigeon.name, pigeon_path(pigeon) %></h4>
         <p>Color: <%= pigeon.color %></p>
         <p>Price: <%= pigeon.price %></p>
       </li>
+      <br>
     <% end %>
   </ul>
 

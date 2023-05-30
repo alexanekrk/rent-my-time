@@ -35,7 +35,7 @@ class PigeonsController < ApplicationController
   def update
     @pigeon = Pigeon.find(params[:id])
     if @pigeon.update(params_pigeon)
-      redirect_to pingeon_path(@pigeon)
+      redirect_to pigeon_path(@pigeon)
     else
       render :new, status: :unprocessable_entity
     end

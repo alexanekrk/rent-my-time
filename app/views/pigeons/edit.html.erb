@@ -1,14 +1,13 @@
-<h1>Edit your pigeon</h1>
-
 
 <div class="container">
-  <h1>Add your pigeons</h1>
-
-  <%= simple_form_for(@pigeon) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :color, collection: ['grey', 'black', 'red', 'blue'] %>
-  <%= f.input :age %>
-  <%= f.input :price %>
-  <%= f.submit %>
-  <% end %>
+  <h1>Edit <%= @pigeon.name %> the pigeon</h1>
+  <div class="container">
+    <%= simple_form_for(@pigeon) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :color, collection: ['grey', 'black', 'red', 'blue'] %>
+    <%= f.input :age %>
+    <%= f.input :price %>
+    <%= f.submit %>
+    <% end %>
+  </div>
 </div>
