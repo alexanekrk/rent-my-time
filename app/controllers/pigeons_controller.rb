@@ -20,7 +20,6 @@ class PigeonsController < ApplicationController
     if @pigeon.save
       redirect_to pigeon_path(@pigeon)
     else
-      raise
       render :new, status: :unprocessable_entity
     end
   end
