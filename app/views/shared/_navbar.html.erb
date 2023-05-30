@@ -22,7 +22,7 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "New Pigeon", new_pigeon_path, class: "dropdown-item" %>
               <%= link_to "My Pigeons", my_pigeons_path, class: "dropdown-item" %>
-              <%= link_to "My Bookings", "#", class: "dropdown-item" %>
+              <%= link_to "My Bookings", bookings_path, class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>

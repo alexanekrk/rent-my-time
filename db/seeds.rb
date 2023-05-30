@@ -62,5 +62,4 @@ end
   puts "Create the booking id #{booking.id}"
 end
 
-
 puts 'All done'
