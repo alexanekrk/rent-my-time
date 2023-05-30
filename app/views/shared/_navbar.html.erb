@@ -2,6 +2,9 @@
   <div class="container-fluid">
     <%= link_to "/", class: "navbar-brand" do %>
       <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
+      <%= link_to 'All Pigeons', pigeons_path %>
+      <%= link_to 'New Pigeon', new_pigeon_path %>
+      <%= link_to 'My Bookings', '#' %>
     <% end %>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,10 +15,13 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
+            <%= link_to "Home", root_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Pigeons", "pigeons/", class: "nav-link" %>
+            <%= link_to "My Pigeons for Rent", "pigeons/", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "New Pigeon", new_pigeon_path, class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
           <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,6 +36,7 @@
         <% else %>
           <li class="nav-item">
             <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
