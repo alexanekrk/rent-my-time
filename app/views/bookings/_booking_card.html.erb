@@ -1,0 +1,18 @@
+<a href= <%= bookings_path %>>
+  <div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= booking.user_id %></h2>
+      </div>
+      <div>
+        <h2> <%= booking.pigeon_id %></h2>
+      </div>
+      <div>
+        <h2 class="card-trip-pricing"><%= booking.quantity %></h2>
+        <p><%= booking.date %></p>
+      </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
+  </div>
+</a>

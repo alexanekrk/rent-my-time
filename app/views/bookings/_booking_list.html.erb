@@ -1,0 +1,7 @@
+<div class="container">
+  <div class="cards">
+      <% bookings.each do |booking| %>
+        <%= render "bookings/booking_card", booking: booking %>
+      <% end %>
+  </div>
+</div>
