@@ -3,9 +3,10 @@
   <div class="card-trip-infos">
     <div>
       <h2> <%= pigeon.name %></h2>
-      <p>Short description here!</p>
+      <p> <%= pigeon.color.capitalize %></p>
     </div>
-    <h2 class="card-trip-pricing">£99.99$</h2>
+    <h2 class="card-trip-pricing"><%= pigeon.price %>$</h2>
+    <p>/per month </p>
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
