@@ -15,9 +15,12 @@ class PigeonsController < ApplicationController
 
   def create
     @pigeon = Pigeon.new(params_pigeon)
+    @user = current_user
+    @pigeon.user = @user
     if @pigeon.save
-        redirect_to pingeon_path(@pigeon)
+      redirect_to pigeon_path(@pigeon)
     else
+      raise
       render :new, status: :unprocessable_entity
     end
   end
