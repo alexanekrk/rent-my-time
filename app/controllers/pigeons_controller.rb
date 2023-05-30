@@ -9,6 +9,10 @@ class PigeonsController < ApplicationController
     @pigeon = Pigeon.find(params[:id])
   end
 
+  def my_pigeons
+    @my_pigeons = Pigeon.all.where(user: current_user)
+  end
+
   def new
     @pigeon = Pigeon.new
   end
