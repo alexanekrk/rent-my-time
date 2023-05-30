@@ -39,9 +39,9 @@ puts "Adding some pigeons..."
 pigeons = []
 
 10.times do
-  pigeon = Pigeon.create(
+  pigeon = Pigeon.create!(
     name: Faker::Name.name,
-    color: %w[grey black yellow blue pink red green orange].sample,
+    color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,
     age: rand(1..8),
     price: rand(10..100),
     user_id: [pablo, alexane, tom].sample.id
@@ -51,9 +51,8 @@ pigeons = []
 end
 
 
-
 10.times do
-  booking = Booking.create(
+  booking = Booking.create!(
     date: Date.new,
     location: Faker::Address.street_address,
     quantity: rand(1...20),
