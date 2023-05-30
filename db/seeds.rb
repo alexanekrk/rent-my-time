@@ -8,8 +8,13 @@
 
 puts "Clean the database..."
 Pigeon.destroy_all
+User.destroy_all
 
-puts "Add some pigeons..."
+puts "Adding 3 users... Tom, Alexane and Pablo"
+
+User.new
+
+puts "Adding some pigeons..."
 
 10.times do
   pigeon = Pigeon.create(
