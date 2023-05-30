@@ -1,0 +1,11 @@
+<h1>All the pigeons available (index)</h1>
+
+
+<ul>
+  <% @pigeons.each do |pigeon| %>
+    <li><h4><%= link_to pigeon.name, pigeon_path(pigeon) %></h4>
+    <p><%= pigeon.color %>
+    <%= pigeon.price %></p>
+  </li>
+  <% end %>
+</ul>

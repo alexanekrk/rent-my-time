@@ -1,0 +1,13 @@
+<h1>The show page</h1>
+
+
+<div class="container">
+
+<h4><%= @pigeon.name %></h4>
+
+</div>
+
+<%= link_to "Delete",
+          pigeon_path(@pigeon),
+          data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+          class: 'btn btn-danger'%>
