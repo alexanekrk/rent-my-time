@@ -1,12 +1,16 @@
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2> <%= pigeon.name %></h2>
-      <p> <%= pigeon.color.capitalize %></p>
-    </div>
-    <h2 class="card-trip-pricing"><%= pigeon.price %>$</h2>
-    <p>/per month </p>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+<a href= <%= pigeon_path(pigeon) %>>
+  <div class="card-trip">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+    <div class="card-trip-infos">
+      <div>
+        <h2> <%= pigeon.name %></h2>
+        <p> <%= pigeon.color.capitalize %></p>
+      </div>
+      <div>
+        <h2 class="card-trip-pricing"><%= pigeon.price %>$</h2>
+        <p>/per month</p>
+      </div>
+        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+      </div>
   </div>
-</div>
+</a>

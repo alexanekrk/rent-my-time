@@ -1,5 +1,7 @@
 <h1>All the pigeons available (index)</h1>
 
+<%= render 'pigeons/pigeons_list', pigeons: @pigeons %>
+
 
 <ul>
   <% @pigeons.each do |pigeon| %>
