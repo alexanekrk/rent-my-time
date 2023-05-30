@@ -1,6 +1,6 @@
 class Pigeon < ApplicationRecord
   belongs_to :user
-  has_many :bookings
+  has_many :bookings, dependent: :destroy
 
-  validates :name, :color, :price, presence: true
+  validates :name, :color, :price, :city, presence: true
 end
