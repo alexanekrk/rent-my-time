@@ -9,12 +9,15 @@
     <%= cl_image_tag @pigeon.photo.key, height: 300, width: 400, crop: :fill %>
 
   </div>
-
+  <div>
   <%= link_to "Edit", edit_pigeon_path(@pigeon) %>
 
   <%= link_to "Delete",
             pigeon_path(@pigeon),
             data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
             class: 'btn btn-danger'%>
-
+  <div>
+  <%= link_to "Book",  new_pigeon_booking_path(@pigeon)%>
+  </div>
+  </div>
 </div>
