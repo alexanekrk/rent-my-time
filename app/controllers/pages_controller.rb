@@ -7,7 +7,7 @@ class PagesController < ApplicationController
 
   def search
     @pigeons = Pigeon.all
-    @pigeons = Pigeon.where(city: 'Paris')
+    @pigeons = Pigeon.where(address: 'Paris')
     raise
   end
 end
