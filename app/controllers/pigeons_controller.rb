@@ -50,6 +50,6 @@ class PigeonsController < ApplicationController
   private
 
   def params_pigeon
-    params.require(:pigeon).permit(:name, :color, :price, :age, :city)
+    params.require(:pigeon).permit(:name, :color, :price, :age, :address)
   end
 end
