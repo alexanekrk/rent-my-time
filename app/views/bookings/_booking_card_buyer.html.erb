@@ -1,11 +1,9 @@
-
-
 <a href= <%= bookings_path %>>
   <div class="card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
     <div class="card-trip-infos">
       <div>
-        <h2> Seller: <% seller.first_name %></h2>
+        <h2> Seller: <%= seller.first_name %></h2>
       </div>
       <div>
         <h2> Buyer: <%= current_user.first_name  %></h2>
