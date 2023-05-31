@@ -73,4 +73,19 @@ end
   puts "Create the booking id #{booking.id}"
 end
 
+puts "adding Montreal pigeons"
+
+3.times do
+  pigeon = Pigeon.create!(
+    name: Faker::Name.name,
+    color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,
+    address: "Montreal",
+    age: rand(1..8),
+    price: rand(10..100),
+    user_id: [pablo, alexane, tom].sample.id
+  )
+  pigeons.push(pigeon)
+  puts "Create the montreal pigeon id #{pigeon.id}"
+end
+
 puts 'All done'
