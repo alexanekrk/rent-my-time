@@ -6,7 +6,9 @@
     <p>Color: <%= @pigeon.color %><p>
     <p>Price: <%= @pigeon.price  %></p>
     <p>address: <%= @pigeon.address  %></p>
-    <%= cl_image_tag @pigeon.photo.key, height: 300, width: 400, crop: :fill %>
+    <% if @pigeon.photo.attached? %>
+      <%= cl_image_tag @pigeon.photo.key, height: 300, width: 400, crop: :fill %>
+    <% end %>
 
   </div>
   <div>
