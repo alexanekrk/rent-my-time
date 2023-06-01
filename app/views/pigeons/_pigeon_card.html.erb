@@ -1,16 +1,17 @@
 <a href= <%= pigeon_path(pigeon) %>>
   <div class="card-trip">
-    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-    <div class="card-trip-infos">
+      <% if pigeon.photo.attached? %>
+        <%= cl_image_tag pigeon.photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>    <div class="card-trip-infos">
       <div>
         <h2> <%= pigeon.name %></h2>
         <p> <%= pigeon.color.capitalize %></p>
       </div>
       <div>
-        <h2 class="card-trip-pricing"><%= pigeon.price %>$</h2>
-        <p>/per month</p>
+        <h2 class="card-trip-pricing">$<%= pigeon.price %></h2>
+        <p>/per day</p>
       </div>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <%# <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" /> %>
       </div>
   </div>
 </a>

@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
 
 puts "Cleaning users, pigeons, bookings from the database..."
 Pigeon.destroy_all
@@ -39,7 +33,7 @@ puts "Adding some pigeons..."
 pigeons = []
 
 10.times do
-  pigeon = Pigeon.create!(
+  pigeon = Pigeon.new(
     name: Faker::Name.name,
     color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,
     address: ["1972 Notre Dame West, Montreal",
@@ -58,34 +52,33 @@ pigeons = []
     price: rand(10..100),
     user_id: [pablo, alexane, tom].sample.id
   )
+  rand_photo = ["https://www.allaboutbirds.org/guide/assets/photo/308074031-480px.jpg",
+                "https://cdn.download.ams.birds.cornell.edu/api/v1/asset/308074331/1800",
+                "https://keyassets.timeincuk.net/inspirewp/live/wp-content/uploads/sites/8/2023/03/GettyImages-1127204610-600x400.jpg",
+                "https://bc.ctvnews.ca/content/dam/ctvnews/en/images/2023/1/6/pigeon-1-6221027-1673045738764.jpg",
+                "https://inaturalist-open-data.s3.amazonaws.com/photos/96934693/medium.jpg",
+                "https://cdn.branchcms.com/Yj0Dao1bVx-1285/images/blogs/big-pigeon-up-close.jpg",
+                "https://transcode-v2.app.engoo.com/image/fetch/f_auto,c_lfill,w_300,dpr_3/https://assets.app.engoo.com/images/5QVey0Z9fxgXanyJYctsnZ.jpeg",
+                "https://www.npausa.com/images/mainimage1.jpg"].sample
+  file = URI.open(rand_photo)
+  pigeon.photo.attach(io: file, filename: 'pigeon_photo.png', content_type: "image/png")
+
+  pigeon.save
+
   pigeons.push(pigeon)
   puts "Create the pigeon id #{pigeon.id}"
 end
 
 10.times do
   booking = Booking.create!(
-    date: Date.new,
+    start_date: Date.new,
+    end_date: Date.new,
     location: Faker::Address.street_address,
     quantity: rand(1...20),
     pigeon_id: pigeons.sample.id,
     user_id: [pablo, alexane, tom].sample.id
   )
   puts "Create the booking id #{booking.id}"
-end
-
-puts "adding Montreal pigeons"
-
-3.times do
-  pigeon = Pigeon.create!(
-    name: Faker::Name.name,
-    color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,
-    address: "Montreal",
-    age: rand(1..8),
-    price: rand(10..100),
-    user_id: [pablo, alexane, tom].sample.id
-  )
-  pigeons.push(pigeon)
-  puts "Create the montreal pigeon id #{pigeon.id}"
 end
 
 puts 'All done'
