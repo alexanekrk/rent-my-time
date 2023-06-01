@@ -64,7 +64,8 @@ end
 
 10.times do
   booking = Booking.create!(
-    date: Date.new,
+    start_date: Date.new,
+    end_date: Date.new,
     location: Faker::Address.street_address,
     quantity: rand(1...20),
     pigeon_id: pigeons.sample.id,
