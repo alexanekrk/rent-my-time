@@ -6,10 +6,17 @@
   padding: 24px;
 }
 
+.i {
+  position: absolute;
+  bottom: 0px;
+  left: 40px;
+}
 
 .map {
+  position: relative;
   margin-bottom: 40px;
 }
+
 .form {
   border: 1px solid rgb(221, 221, 221);
   padding: 24px;
