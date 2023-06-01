@@ -4,21 +4,24 @@
 
     <% @my_pigeons.each do |pigeon| %>
     <div class ="d-flex justify-content-between align-items-center p-2">
-      <div>
-        <h4><%= link_to pigeon.name, pigeon_path(pigeon) %></h4>
-        <p>Color: <%= pigeon.color %></p>
-        <p>Price: <%= pigeon.price %></p>
-      </div>
-      <div>
-        <%= link_to "Edit",
-                    edit_pigeon_path(pigeon),
-                    class: 'btn-flat'
-                    %>
+      <div class="card-category">
+        <div class="card-pigeon">
+          <h4><%= link_to pigeon.name, pigeon_path(pigeon) %></h4>
+          <p>Color: <%= pigeon.color %></p>
+          <p>Price: <%= pigeon.price %></p>
+        </div>
 
-        <%= link_to "Delete",
-                  pigeon_path(pigeon),
-                  data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
-                  class: 'btn-flat'%>
+        <div class="card-pigeon-link">
+          <%= link_to "Edit",
+                      edit_pigeon_path(pigeon),
+                      class: 'btn-flat'
+                      %>
+
+          <%= link_to "Delete",
+                    pigeon_path(pigeon),
+                    data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+                    class: 'btn-flat'%>
+          </div>
       </div>
     </div>
     <% end %>
