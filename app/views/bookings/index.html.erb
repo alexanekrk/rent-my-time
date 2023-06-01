@@ -1,9 +1,21 @@
-<h1>Bookings</h1>
+<h1 id="booking"> Bookings</h1>
 
-<div class="card-trip">
-  <%= render "bookings/booking_rent_from", bookings: @bookings %>
-</div>
+<div class= "container">
+  <div class="card-booking">
+    <div class="card-trip-booking">
+      <div class="card-trip-infos-booking">
+        <div>
+          <h1><%= link_to "Rent To Others", rent_to_path%></h1>
+        </div>
+      </div>
+    </div>
 
-<div class="card-trip">
-  <%= render "bookings/booking_rent_to", bookings: @bookings %>
-</div>
+    <div class="card-trip-booking">
+      <div class="card-trip-infos-booking">
+        <div>
+        <h1><%= link_to "Rent From Others", rent_from_path%></h1>
+        </div>
+      </div>
+    </div>
+
+  </div>

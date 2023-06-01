@@ -46,3 +46,41 @@
   top: -20px;
   width: 40px;
 }
+
+
+
+
+.card-booking{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
+
+.card-trip-booking{
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  width: 300px;
+  height:500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-trip-booking .card-trip-infos-booking {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+#booking{
+  margin-top: 30px;
+  margin-bottom: 40px;
+
+  margin-left: 40px;
+
+}
