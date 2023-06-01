@@ -1,5 +1,6 @@
   <%= simple_form_for(@pigeon) do |f| %>
   <%= f.input :name %>
+  <%= f.input :description %>
   <%= f.input :color, collection: ['grey', 'black', 'red', 'blue'] %>
   <%= f.input :photo, as: :file%>
   <%= f.input :age %>
