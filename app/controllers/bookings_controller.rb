@@ -20,4 +20,8 @@ class BookingsController < ApplicationController
     @booking.save
     redirect_to bookings_path
   end
+
+  def destroy
+
+  end
 end

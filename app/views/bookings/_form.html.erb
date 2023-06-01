@@ -1,5 +1,5 @@
   <%= simple_form_for([@pigeon, @booking]) do |f| %>
-  <%= f.input :date%>
-  <%= f.input :location %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
   <%= f.submit %>
   <% end %>
