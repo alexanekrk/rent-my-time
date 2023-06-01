@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def search
-    @pigeons = Pigeon.where(address: params[:search][:query])
+    @pigeons = Pigeon.near(params[:search][:query], 10)
 
     @markers = @pigeons.geocoded.map do |pigeon|
       {
