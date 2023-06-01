@@ -1,9 +1,11 @@
 <div class="container">
   <h1><%= @pigeon.name %> the Pigeon</h1>
+
     <% if @pigeon.photo.attached? %>
         <%= cl_image_tag @pigeon.photo.key, height: 400, width: 500, crop: :fill %>
     <% end %>
   <div class="d-flex justify-content-between">
+
     <div>
       <div class="infos">
         <i class="fi fi-bs-raindrops"></i>

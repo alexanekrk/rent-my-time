@@ -1,22 +1,27 @@
-  <a href= <%= bookings_path %>>
+<a href=<%= booking_path(booking) %>>
   <div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
     <div class="card-trip-infos">
-      <div>
-        <h2> Seller: <%= current_user.first_name %></h2>
-      </div>
-      <div>
-        <h2> Buyer: <%= buyer.first_name %></h2>
-      </div>
-      <div>
-        <h2> Pigeon: <%= pigeon.name %></h2>
-      </div>
-      <div>
-        <h2 class="card-trip-pricing"><%= booking.quantity %></h2>
-        <p><%= booking.start_date %></p>
-        <p><%= booking.end_date %></p>
-      </div>
-        <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+        <div>
+          <h2> Seller: <%= current_user.first_name %></h2>
+        </div>
+        <div>
+          <h2> Buyer: <%= buyer.first_name %></h2>
+        </div>
+        <div>
+          <h2> Pigeon: <%= pigeon.name %></h2>
+        </div>
+        <div>
+          <p>start date: <%= booking.start_date %></p>
+          <p>end date:<%= booking.end_date %></p>
+        </div>
+        <div>
+        <%# Accept --> move the card to the other column %>
+        <%= link_to "Accept", ""%>
+        <%# Delete it from db %>
+          <%= link_to "Reject",
+                  booking_path(booking),
+                  data: { turbo_method: :delete, turbo_confirm: 'Sure?' } %>
+        </div>
       </div>
   </div>
-  </a>
+</a>
