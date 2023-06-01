@@ -6,6 +6,7 @@
       <p>Color: <%= @pigeon.color %><p>
       <p>Price: <%= @pigeon.price  %></p>
       <p>address: <%= @pigeon.address  %></p>
+      <p>age: <%= @pigeon.age  %></p>
       <% if @pigeon.photo.attached? %>
         <%= cl_image_tag @pigeon.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
@@ -22,9 +23,9 @@
                   class: 'btn btn-danger'%>
       <% else %>
 
-    <div>
-    <%= link_to "Book",  new_pigeon_booking_path(@pigeon)%>
-    </div>
+        <div>
+        <%= link_to "Book",  new_pigeon_booking_path(@pigeon) %>
+        </div>
       <% end %>
 
   </div>
