@@ -1,27 +1,39 @@
 <a href=<%= booking_path(booking) %>>
+
   <div class="card-trip">
     <div class="card-trip-infos">
+
+      <div class="d-flex">
+
         <div>
           <h2> Seller: <%= current_user.first_name %></h2>
-        </div>
-        <div>
           <h2> Buyer: <%= buyer.first_name %></h2>
-        </div>
-        <div>
           <h2> Pigeon: <%= pigeon.name %></h2>
+          <div>
+            <p>Start date: <%= booking.start_date %></p>
+            <p>End date:<%= booking.end_date %></p>
+          </div>
+
+          <div class="my-3">
+            <%# Accept --> move the card to the other column %>
+            <%= link_to "Accept", "", class: "btn-flat"%>
+            <%# Delete it from db %>
+              <%= link_to "Reject",
+                      booking_path(booking),
+                      data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+                      class: "btn-flat" %>
+          </div>
         </div>
-        <div>
-          <p>Start date: <%= booking.start_date %></p>
-          <p>End date:<%= booking.end_date %></p>
-        </div>
-        <div>
-        <%# Accept --> move the card to the other column %>
-        <%= link_to "Accept", ""%>
-        <%# Delete it from db %>
-          <%= link_to "Reject",
-                  booking_path(booking),
-                  data: { turbo_method: :delete, turbo_confirm: 'Sure?' } %>
-        </div>
+
+          <div class="p-3">
+            <% if booking.pigeon.photo.attached? %>
+              <%= cl_image_tag booking.pigeon.photo.key, height: 300, width: 400, crop: :fill, class: "card-trip-user avatar-bordered" %>
+            <% end %>
+          </div>
+
       </div>
+
+    </div>
   </div>
+
 </a>

@@ -1,24 +1,31 @@
-<h1>Checkout the requests!</h1>
+<div class="container">
 
+  <h1>Booking Requests</h1>
+  <br>
 
-<div>
+  <div class="container">
+    <div>
 
-  <div>
-    <h1>Approval Pending</h1>
-    <div class="cards">
-        <% @bookings.each do |booking| %>
-        <% @pigeon = Pigeon.find(booking.pigeon_id) %>
-        <% @buyer = User.find(booking.user_id) %>
-        <% @seller = User.find(@pigeon.user_id) %>
-          <% if @seller.id == current_user.id  %>
-          <%= render "bookings/booking_card_seller", booking: booking, pigeon: @pigeon, buyer: @buyer %>
-          <% end %>
-        <% end %>
+      <div>
+        <h2>Your Pending Approvals</h2>
+        <div class="cards">
+            <% @bookings.each do |booking| %>
+            <% @pigeon = Pigeon.find(booking.pigeon_id) %>
+            <% @buyer = User.find(booking.user_id) %>
+            <% @seller = User.find(@pigeon.user_id) %>
+              <% if @seller.id == current_user.id  %>
+              <%= render "bookings/booking_card_seller", booking: booking, pigeon: @pigeon, buyer: @buyer %>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
+
+      <div>
+        <h2 class="mt-5">Approved Bookings</h2>
+
+      </div>
+
     </div>
-  </div>
-
-  <div>
-    <h1>Completed</h1>
 
   </div>
 
