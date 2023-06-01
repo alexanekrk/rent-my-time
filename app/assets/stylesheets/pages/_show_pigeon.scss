@@ -1,8 +1,14 @@
 .name {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
   background-color: white;
   box-shadow: 0 0.1rem 0.7rem rgba(0,0,0,.05);
   margin-top: 0;
   padding: 24px;
+}
+
+
+.map {
+  margin-bottom: 40px;
 }
 .form {
   border: 1px solid rgb(221, 221, 221);

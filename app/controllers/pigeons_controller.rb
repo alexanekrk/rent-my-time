@@ -8,6 +8,7 @@ class PigeonsController < ApplicationController
   def show
     @pigeon = Pigeon.find(params[:id])
     @booking = Booking.new
+    @markers = { lat: @pigeon.latitude, lng: @pigeon.longitude }
   end
 
   def my_pigeons
