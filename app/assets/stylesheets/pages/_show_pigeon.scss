@@ -1,24 +1,9 @@
-.bandeau {
-  width: auto;
-  height: 70px;
-  background: #003333;
-  font-family: verdana, helvetica, arial, sans-serif;
-  padding: 0 10px 0 70px;
-  font-size: 40px;
-  font-weight: bold;
-  color: #EEEEEE;
-  text-align: right;
+.name {
+  background-color: white;
+  box-shadow: 0 0.1rem 0.7rem rgba(0,0,0,.05);
+  margin-top: 0;
+  padding: 24px;
 }
-
-img {
-  justify-content: center;
-}
-
-
-.infos {
-
-}
-
 .form {
   border: 1px solid rgb(221, 221, 221);
   padding: 24px;
