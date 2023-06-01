@@ -3,12 +3,14 @@
   display: flex;
   flex-wrap: wrap;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
+  // grid-gap: 16px;
   justify-content: start;
 }
 
 .card-trip {
   overflow: hidden;
+  margin: 10px;
+  width: 400px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
@@ -35,16 +37,16 @@
 .card-trip .card-trip-infos {
   padding: 16px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
 .card-trip-infos .card-trip-user {
-  position: absolute;
   right: 16px;
   top: -20px;
-  width: 40px;
+  width: 80px;
+  height: 80px;
 }
 
 
