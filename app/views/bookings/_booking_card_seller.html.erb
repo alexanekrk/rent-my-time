@@ -1,4 +1,4 @@
-<a href= <%= bookings_path %>>
+<a href=<%= booking_path(booking) %>>
   <div class="card-trip">
     <div class="card-trip-infos">
         <div>
@@ -13,6 +13,14 @@
         <div>
           <p>start date: <%= booking.start_date %></p>
           <p>end date:<%= booking.end_date %></p>
+        </div>
+        <div>
+        <%# Accept --> move the card to the other column %>
+        <%= link_to "Accept", ""%>
+        <%# Delete it from db %>
+          <%= link_to "Reject",
+                  booking_path(booking),
+                  data: { turbo_method: :delete, turbo_confirm: 'Sure?' } %>
         </div>
       </div>
   </div>
