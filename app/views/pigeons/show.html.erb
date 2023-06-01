@@ -9,20 +9,25 @@
 </div>
 
 <div class="container">
-    <% if @pigeon.photo.attached? %>
-      <div class='i'>
-        <%= cl_image_tag @pigeon.photo.key, height: 100, width: 100, crop: :fill %>
-      </div>
-    <% end %>
-  <div class="d-flex justify-content-between">
 
+  <% if @pigeon.photo.attached? %>
+    <%= cl_image_tag @pigeon.photo.key, height: 180, width: 180, crop: :fill, class:'i' %>
+  <% end %>
+
+  <div class="d-flex justify-content-between">
     <div>
+      <h4>Description</h4>
+      <p><%= @pigeon.description %></p>
+
+      <br>
+      <br>
+
       <div class="infos">
+      <h4>Details</h4>
         <i class="fi fi-bs-raindrops"></i>
         <p>Color: <%= @pigeon.color %><p>
         <p>address: <%= @pigeon.address  %></p>
         <p>age: <%= @pigeon.age %></p>
-        <p>description <%= @pigeon.description %></p>
       </div>
 
     </div>

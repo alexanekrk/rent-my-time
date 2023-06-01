@@ -14,6 +14,5 @@ class PagesController < ApplicationController
         lng: pigeon.longitude
       }
     end
-    raise
   end
 end
