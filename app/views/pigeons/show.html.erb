@@ -14,18 +14,6 @@
         <p>age: <%= @pigeon.age %></p>
       </div>
 
-      <div>
-        <% if current_user != nil && current_user.id == @pigeon.user_id %>
-          <%= link_to "Edit", edit_pigeon_path(@pigeon) %>
-
-          <%= link_to "Delete",
-                    pigeon_path(@pigeon),
-                    data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
-                    class: 'btn btn-danger'%>
-        <% else %>
-          <%= link_to "Book",  new_pigeon_booking_path(@pigeon)%>
-        <% end %>
-      </div>
     </div>
     <div class='form'>
       <h2><%= @pigeon.price %></h2>$/per day
@@ -33,5 +21,6 @@
         <p><%= render 'bookings/form' %></p>
       </div>
     </div>
+
   </div>
 </div>
