@@ -1,13 +1,14 @@
-<h1>List all the pigeons I Booked</h1>
-<div>
-  <div class="cards">
-      <% @bookings.each do |booking| %>
-        <% @pigeon = Pigeon.find(booking.pigeon_id) %>
-        <% @buyer = User.find(booking.user_id)  %>
-        <% @seller = User.find(@pigeon.user_id) %>
-        <% if @buyer.id == current_user.id %>
-          <%= render "bookings/booking_card_buyer", booking: booking, pigeon: @pigeon, seller: @seller  %>
+
+<div class="container">
+  <h1>All the pigeons I've Booked</h1>
+    <div class="cards">
+        <% @bookings.each do |booking| %>
+          <% @pigeon = Pigeon.find(booking.pigeon_id) %>
+          <% @buyer = User.find(booking.user_id)  %>
+          <% @seller = User.find(@pigeon.user_id) %>
+          <% if @buyer.id == current_user.id %>
+            <%= render "bookings/booking_card_buyer", booking: booking, pigeon: @pigeon, seller: @seller  %>
+          <% end %>
         <% end %>
-      <% end %>
-  </div>
+    </div>
 </div>
