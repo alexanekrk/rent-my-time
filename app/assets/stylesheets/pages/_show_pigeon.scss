@@ -1,0 +1,27 @@
+.bandeau {
+  width: auto;
+  height: 70px;
+  background: #003333;
+  font-family: verdana, helvetica, arial, sans-serif;
+  padding: 0 10px 0 70px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #EEEEEE;
+  text-align: right;
+}
+
+img {
+  justify-content: center;
+}
+
+
+.infos {
+
+}
+
+.form {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}

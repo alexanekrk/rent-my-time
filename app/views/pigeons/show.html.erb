@@ -1,17 +1,16 @@
-<div class="container d-flex">
-  <div>
-    <h1><%= @pigeon.name %> the Pigeon</h1>
-
-      <% if @pigeon.photo.attached? %>
-        <%= cl_image_tag @pigeon.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-
-      <div class="container">
+<div class="container">
+  <h1><%= @pigeon.name %> the Pigeon</h1>
+    <% if @pigeon.photo.attached? %>
+        <%= cl_image_tag @pigeon.photo.key, height: 400, width: 500, crop: :fill %>
+    <% end %>
+  <div class="d-flex justify-content-between">
+    <div>
+      <div class="infos">
+        <i class="fi fi-bs-raindrops"></i>
         <p>Color: <%= @pigeon.color %><p>
-        <p>Price: <%= @pigeon.price  %></p>
         <p>address: <%= @pigeon.address  %></p>
+        <p>age: <%= @pigeon.age %></p>
       </div>
-
 
       <div>
         <% if current_user != nil && current_user.id == @pigeon.user_id %>
@@ -22,19 +21,15 @@
                     data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
                     class: 'btn btn-danger'%>
         <% else %>
-            <div>
           <%= link_to "Book",  new_pigeon_booking_path(@pigeon)%>
-            </div>
         <% end %>
-  </div>
-
-
-
-
-  </div>
-
-
-  <div class='d-flex'>
-    <%= render 'bookings/form' %>
+      </div>
+    </div>
+    <div class='form'>
+      <h2><%= @pigeon.price %></h2>$/per day
+      <div class='d-flex'>
+        <p><%= render 'bookings/form' %></p>
+      </div>
+    </div>
   </div>
 </div>
