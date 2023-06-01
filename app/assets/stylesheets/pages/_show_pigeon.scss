@@ -10,8 +10,9 @@
   position: absolute;
   bottom: 260px;
   left: 100px;
-  box-shadow: 0 0.1rem 0.7rem rgba(0,0,0,.05);
-  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  border-radius: 50%;
+  border: 3px solid white;
 }
 
 .map {
@@ -24,4 +25,9 @@
   padding: 24px;
   border-radius: 12px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}
+
+.box {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 50px;
 }

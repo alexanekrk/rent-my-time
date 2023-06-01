@@ -16,14 +16,13 @@
 
   <div class="d-flex justify-content-between">
     <div>
-      <h4>Description</h4>
-      <p><%= @pigeon.description %></p>
+      <div class="box">
+        <h4>Description</h4>
+        <p><%= @pigeon.description %></p>
+      </div>
 
-      <br>
-      <br>
-
-      <div class="infos">
-      <h4>Details</h4>
+      <div class="infos box">
+        <h4>Details</h4>
         <i class="fi fi-bs-raindrops"></i>
         <p>Color: <%= @pigeon.color %><p>
         <p>address: <%= @pigeon.address  %></p>
