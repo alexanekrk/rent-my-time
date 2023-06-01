@@ -48,13 +48,12 @@
 }
 
 
-
-
 .card-booking{
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
+  gap: 120px;
+  margin-top: 80px;
 }
 
 .card-trip-booking{
@@ -78,9 +77,6 @@
 }
 
 #booking{
-  margin-top: 30px;
-  margin-bottom: 40px;
-
-  margin-left: 40px;
-
+  padding-top: 40px;
+  text-align: center;
 }
