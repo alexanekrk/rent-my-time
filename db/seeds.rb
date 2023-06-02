@@ -50,6 +50,7 @@ pigeons = []
               "2180 Mont-Royal Ave E, Montreal"].sample,
     age: rand(1..8),
     price: rand(10..100),
+    description: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false),
     user_id: [pablo, alexane, tom].sample.id
   )
   rand_photo = ["https://www.allaboutbirds.org/guide/assets/photo/308074031-480px.jpg",

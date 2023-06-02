@@ -1,21 +1,66 @@
+<div class="name">
+    <h1><%= @pigeon.name %> the Pigeon</h1>
+</div>
+
+<div class="map" style="width: 100%; height: 300px;"
+  data-controller="map"
+  data-map-markers-value="<%= @marker.to_json %>"
+  data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+</div>
+
 <div class="container">
 
-  <h1><%= @pigeon.name %> the Pigeon</h1>
+  <% if @pigeon.photo.attached? %>
+    <%= cl_image_tag @pigeon.photo.key, height: 180, width: 180, crop: :fill, class:'i' %>
+  <% end %>
 
-    <div class="container">
-      <p>Color: <%= @pigeon.color %><p>
-      <p>Price: <%= @pigeon.price  %></p>
-      <p>address: <%= @pigeon.address  %></p>
-      <p>age: <%= @pigeon.age  %></p>
-      <% if @pigeon.photo.attached? %>
-        <%= cl_image_tag @pigeon.photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-    </div>
-
-
-  <div>
-      <div>
-        <%= link_to "Book",  new_pigeon_booking_path(@pigeon), class: "btn-flat" %>
+  <div class="d-flex justify-content-between">
+    <div>
+      <div class="box">
+        <h4>Description</h4>
+        <p><%= @pigeon.description %></p>
       </div>
+
+<i class="fi fi-bs-raindrops"></i>
+
+      <div class="box">
+
+        <h4>Details</h4>
+        <div class="boxes">
+          <div class="lt-box">
+            <i class="fas fa-tint fa-lg"></i>
+            <p><%= @pigeon.color.capitalize %><p>
+          </div>
+          <div class="lt-box">
+            <i class="fas fa-map-marked-alt fa-lg"></i>
+            <p><%= @pigeon.address %></p>
+          </div>
+          <div class="lt-box">
+            <i class="fas fa-dove fa-lg"></i>
+            <p><%= @pigeon.age %> years old</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h4>Owner</h4>
+        <p><%= @owner.first_name %> <%= @owner.last_name.upcase %><p>
+        <% until @owner.phone_number.nil? %>
+         Phone number: <%= @owner.phone_number %>
+        <% end %>
+        <br>
+        <br>
+        <br>
+        <h4>Send a message </h4>
+      </div>
+
+    </div>
+    <div class='form sticky-top'>
+      <div class="d-flex">
+        <h2><strong><%= @pigeon.price %></strong></h2>
+        <p>$/per day</p>
+      </div>
+        <p><%= render 'bookings/form' %></p>
+    </div>
   </div>
 </div>
