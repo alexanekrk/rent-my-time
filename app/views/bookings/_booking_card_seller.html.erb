@@ -1,6 +1,6 @@
 <a href=<%= booking_path(booking) %>>
 
-  <div class="card-trip">
+  <div class="card-trip" data-move-booking-target="link">
     <div class="card-trip-infos">
 
       <div class="d-flex">
@@ -17,8 +17,7 @@
           <div class="my-3">
             <%# Accept --> move the card to the other column %>
             <a href="#" class="btn-flat m-3"
-                        data-action="click->move-booking#move"
-                        data-move-booking-target="link">
+                        data-action="click->move-booking#move">
               Accept
             </a>
             <%# <%= link_to "Accept", "#", class: "btn-flat", data: {
