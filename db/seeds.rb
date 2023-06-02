@@ -32,7 +32,7 @@ puts "Adding some pigeons..."
 
 pigeons = []
 
-10.times do
+12.times do
   pigeon = Pigeon.new(
     name: Faker::Name.name,
     color: ["grey", "black", "yellow", "blue", "pink", "red", "green", "orange"].sample,

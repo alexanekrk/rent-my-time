@@ -6,7 +6,7 @@
     <%= render 'pigeons/pigeons_list'%>
   </div>
 
-  <div class="sticky sticky-top"
+  <div class="sticky sticky-top { top: 0.5em; }"
       data-controller="map"
       data-map-markers-value="<%= @markers.to_json %>"
       data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
