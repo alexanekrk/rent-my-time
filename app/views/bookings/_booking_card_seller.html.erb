@@ -1,4 +1,4 @@
-<a href=<%= booking_path(booking) %>>
+
 
   <div class="card-trip" data-move-booking-target="link">
     <div class="card-trip-infos">
@@ -6,26 +6,23 @@
       <div class="d-flex">
 
         <div>
-          <h2> Seller: <%= current_user.first_name %></h2>
-          <h2> Buyer: <%= buyer.first_name %></h2>
-          <h2> Pigeon: <%= pigeon.name %></h2>
-          <div>
-            <p>Start date: <%= booking.start_date %></p>
-            <p>End date:<%= booking.end_date %></p>
-          </div>
-
-          <div class="my-3">
+          <a href=<%= booking_path(booking) %>>
+            <h2> Owner: <%= current_user.first_name %></h2>
+            <h2> Rentee: <%= buyer.first_name %></h2>
+            <h2> Pigeon: <%= pigeon.name %></h2>
+            <%= booking.approved %>
+            <div>
+              <p>Start date: <%= booking.start_date %></p>
+              <p>End date:<%= booking.end_date %></p>
+            </div>
+          </a>
+          <div class="my-3 d-flex gap-3">
             <%# Accept --> move the card to the other column %>
-            <a href="#" class="btn-flat m-3"
-                        data-action="click->move-booking#move">
-              Accept
-            </a>
-            <%# <%= link_to "Accept", "#", class: "btn-flat", data: {
-                                move_booking_target: 'link',
-                                action: 'click->move_booking#move'
-            }%>
+            <%= button_to "Accept", approve_path(booking), method: "patch", class: "btn btn-flat", params: { approved: 1 } %>
             <%# Delete it from db %>
-              <%= link_to "Reject",
+            <%= button_to "Reject", approve_path(booking), method: "patch", class: "btn btn-flat", params: { approved: 0 } %>
+
+              <%# <%= link_to "Reject",
                       booking_path(booking),
                       data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
                       class: "btn-flat" %>
@@ -42,5 +39,3 @@
 
     </div>
   </div>
-
-</a>

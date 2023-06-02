@@ -8,11 +8,13 @@ Rails.application.routes.draw do
 
   get "bookings/booking_rent_from", to: 'bookings#rent_from', as: :rent_from
   get "bookings/booking_rent_to", to: 'bookings#rent_to', as: :rent_to
+  patch 'bookings/:id', to: 'bookings#approve', as: :approve
 
   resources :pigeons do
-    resources :bookings, only: [ :new, :create, :edit, :update ]
+    resources :bookings, only: [ :new, :create ]
+
     resources :comments, only: :create
   end
 
-  resources :bookings, only: [ :index, :show, :destroy]
+  resources :bookings, only: [ :index, :show, :destroy, :update]
 end
