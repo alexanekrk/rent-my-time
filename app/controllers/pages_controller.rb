@@ -7,6 +7,10 @@ class PagesController < ApplicationController
 
   def search
     @pigeons = Pigeon.near(params[:search][:query], 10)
+    @count = 0
+    @pigeons.each do
+      @count += 1
+    end
 
     @markers = @pigeons.geocoded.map do |pigeon|
       {
