@@ -1,5 +1,5 @@
 <a href= <%= pigeon_path(pigeon) %>>
-  <div class="card-trip-pigeon">
+  <div class="card-trip-pigeon m-3">
       <% if pigeon.photo.attached? %>
         <%= cl_image_tag pigeon.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
@@ -29,7 +29,6 @@
                   data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
                   class: 'btn-flat'%>
       </div>
-    </div>
     </div>
   </div>
 </a>
