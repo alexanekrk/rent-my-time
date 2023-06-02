@@ -56,6 +56,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_171842) do
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.bigint "pigeon_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pigeon_id"], name: "index_comments_on_pigeon_id"
+  end
+
   create_table "pigeons", force: :cascade do |t|
     t.string "name"
     t.string "color"
@@ -91,5 +99,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_171842) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "bookings", "pigeons"
   add_foreign_key "bookings", "users"
+  add_foreign_key "comments", "pigeons"
   add_foreign_key "pigeons", "users"
 end
