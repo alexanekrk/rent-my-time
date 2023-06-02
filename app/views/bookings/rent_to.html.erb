@@ -4,7 +4,7 @@
   <br>
 
   <div class="container">
-    <div data-controller="move-booking">
+    <div>
 
       <div>
         <h2>Your Pending Approvals</h2>
@@ -13,7 +13,7 @@
             <% @pigeon = Pigeon.find(booking.pigeon_id) %>
             <% @buyer = User.find(booking.user_id) %>
             <% @seller = User.find(@pigeon.user_id) %>
-              <% if @seller.id == current_user.id  %>
+              <% if @seller.id == current_user.id && booking.approved == nil %>
               <%= render "bookings/booking_card_seller", booking: booking, pigeon: @pigeon, buyer: @buyer %>
               <% end %>
             <% end %>
@@ -21,8 +21,31 @@
       </div>
 
       <div>
-        <h2 class="mt-5" data-move-booking-target="destination">Approved Bookings</h2>
+        <h2 class="mt-5">Approved Bookings</h2>
+        <div class="cards">
+            <% @bookings.each do |booking| %>
+            <% @pigeon = Pigeon.find(booking.pigeon_id) %>
+            <% @buyer = User.find(booking.user_id) %>
+            <% @seller = User.find(@pigeon.user_id) %>
+              <% if @seller.id == current_user.id && booking.approved == true %>
+              <%= render "bookings/booking_card_seller", booking: booking, pigeon: @pigeon, buyer: @buyer %>
+              <% end %>
+            <% end %>
+        </div>
+      </div>
 
+      <div>
+        <h2 class="mt-5">Rejected Booking</h2>
+        <div class="cards">
+            <% @bookings.each do |booking| %>
+            <% @pigeon = Pigeon.find(booking.pigeon_id) %>
+            <% @buyer = User.find(booking.user_id) %>
+            <% @seller = User.find(@pigeon.user_id) %>
+              <% if @seller.id == current_user.id && booking.approved == false %>
+              <%= render "bookings/booking_card_seller", booking: booking, pigeon: @pigeon, buyer: @buyer %>
+              <% end %>
+            <% end %>
+        </div>
       </div>
 
     </div>

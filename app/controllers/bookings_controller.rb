@@ -38,4 +38,16 @@ class BookingsController < ApplicationController
   def rent_to
     @bookings = Booking.all
   end
+
+  def approve
+    @booking = Booking.find(params[:id])
+    @approved = params[:approved].to_i
+    if @approved == 1
+      @booking.approved = true
+    else
+      @booking.approved = false
+    end
+    @booking.save
+    redirect_to rent_to_path
+  end
 end
