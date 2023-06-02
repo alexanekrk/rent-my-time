@@ -9,20 +9,7 @@
   <div class="cards d-flex justify-content-center">
       <% @my_pigeons.each do |pigeon| %>
         <div>
-          <%= render "pigeons/pigeon_card", pigeon: pigeon %>
-            <div class="card-pigeon-link">
-            <br>
-              <%= link_to "Edit",
-                          edit_pigeon_path(pigeon),
-                          class: 'btn-flat'
-                          %>
-
-              <%= link_to "Delete",
-                        pigeon_path(pigeon),
-                        data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
-                        class: 'btn-flat'%>
-            </div>
-          </div>
+          <%= render "pigeons/my_pigeon_card", pigeon: pigeon %>
       <% end %>
   </div>
 </div>
