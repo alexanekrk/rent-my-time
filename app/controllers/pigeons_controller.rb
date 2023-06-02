@@ -10,6 +10,7 @@ class PigeonsController < ApplicationController
     @booking = Booking.new
     @marker = [{ lat: @pigeon.latitude, lng: @pigeon.longitude }]
     @owner = User.find(@pigeon.user_id)
+    @comment = Comment.new
   end
 
   def my_pigeons

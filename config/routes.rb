@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :pigeons do
     resources :bookings, only: [ :new, :create, :edit, :update ]
+    resources :comments, only: :create
   end
 
   resources :bookings, only: [ :index, :show, :destroy]
