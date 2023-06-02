@@ -21,12 +21,34 @@
         <p><%= @pigeon.description %></p>
       </div>
 
-      <div class="infos box">
+<i class="fi fi-bs-raindrops"></i>
+
+      <div class="box">
+
         <h4>Details</h4>
-        <i class="fi fi-bs-raindrops"></i>
-        <p>Color: <%= @pigeon.color %><p>
-        <p>address: <%= @pigeon.address  %></p>
-        <p>age: <%= @pigeon.age %></p>
+        <div class="boxes">
+          <div class="lt-box">
+            <i class="fas fa-tint fa-lg"></i>
+            <p><%= @pigeon.color.capitalize %><p>
+          </div>
+          <div class="lt-box">
+            <i class="fas fa-map-marked-alt fa-lg"></i>
+            <p><%= @pigeon.address %></p>
+          </div>
+          <div class="lt-box">
+            <i class="fas fa-dove fa-lg"></i>
+            <p><%= @pigeon.age %> years old</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="box">
+        <h4>Owner</h4>
+        <p><%= @owner.first_name %> <%= @owner.last_name.upcase %><p>
+        <% until @owner.phone_number.nil? %>
+         Phone number: <%= @owner.phone_number %>
+        <% end %>
+        <h4>Send a message </h4>
       </div>
 
     </div>
@@ -36,6 +58,5 @@
         <p><%= render 'bookings/form' %></p>
       </div>
     </div>
-
   </div>
 </div>

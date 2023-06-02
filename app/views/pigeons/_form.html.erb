@@ -1,10 +1,12 @@
-  <%= simple_form_for(@pigeon) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :color, collection: ['grey', 'black', 'red', 'blue'] %>
-  <%= f.input :photo, as: :file%>
-  <%= f.input :age %>
-  <%= f.input :price %>
-  <%= f.input :address %>
-  <%= f.submit %>
-  <% end %>
+<br>
+<br>
+<%= simple_form_for(@pigeon) do |f| %>
+<%= f.input :name, placeholder:"Write the name of your pigeon"%>
+<%= f.input :description %>
+<%= f.input :color, collection: ['grey', 'black', 'red', 'blue'] %>
+<%= f.input :photo, as: :file%>
+<%= f.input :age %>
+<%= f.input :price %>
+<%= f.input :address %>
+<%= f.submit %>
+<% end %>

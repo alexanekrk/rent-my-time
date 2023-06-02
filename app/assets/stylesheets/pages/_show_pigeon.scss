@@ -30,4 +30,24 @@
 .box {
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   margin-bottom: 50px;
+  margin-right: 120px;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lt-box {
+  border: 1px solid rgb(221, 221, 221);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 50px;
 }
