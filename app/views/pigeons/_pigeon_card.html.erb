@@ -1,7 +1,7 @@
 <a href= <%= pigeon_path(pigeon) %>>
   <div class="card-trip">
       <% if pigeon.photo.attached? %>
-        <%= cl_image_tag pigeon.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag pigeon.photo.key, height: 150, width: 300, crop: :fill %>
       <% end %>    <div class="card-trip-infos">
       <div>
         <h2> <%= pigeon.name %></h2>
