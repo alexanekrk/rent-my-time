@@ -16,7 +16,15 @@
 
           <div class="my-3">
             <%# Accept --> move the card to the other column %>
-            <%= link_to "Accept", "", class: "btn-flat"%>
+            <a href="#" class="btn-flat m-3"
+                        data-action="click->move-booking#move"
+                        data-move-booking-target="link">
+              Accept
+            </a>
+            <%# <%= link_to "Accept", "#", class: "btn-flat", data: {
+                                move_booking_target: 'link',
+                                action: 'click->move_booking#move'
+            }%>
             <%# Delete it from db %>
               <%= link_to "Reject",
                       booking_path(booking),
