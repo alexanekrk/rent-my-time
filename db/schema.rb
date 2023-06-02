@@ -51,7 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_171842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "end_date"
-    t.boolean "approved"
+    t.boolean "approved", default: false
     t.index ["pigeon_id"], name: "index_bookings_on_pigeon_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
