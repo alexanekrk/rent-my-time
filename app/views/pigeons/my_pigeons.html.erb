@@ -1,29 +1,28 @@
+<br>
+<br>
 <div class="container">
 
-  <h1>My Pigeons</h1>
+  <div class='d-flex justify-content-between align-items-start'>
+    <h1>My Pigeons</h1>
+    <%= link_to "+ New pigeon", new_pigeon_path, class: 'btn-ghost'%>
+  </div>
+  <div class="cards d-flex justify-content-center">
+      <% @my_pigeons.each do |pigeon| %>
+        <div>
+          <%= render "pigeons/pigeon_card", pigeon: pigeon %>
+            <div class="card-pigeon-link">
+            <br>
+              <%= link_to "Edit",
+                          edit_pigeon_path(pigeon),
+                          class: 'btn-flat'
+                          %>
 
-    <% @my_pigeons.each do |pigeon| %>
-    <div class ="d-flex justify-content-between align-items-center p-2">
-      <div class="card-category">
-        <div class="card-pigeon">
-          <h4><%= link_to pigeon.name, pigeon_path(pigeon) %></h4>
-          <p>Color: <%= pigeon.color %></p>
-          <p>Price: <%= pigeon.price %></p>
-        </div>
-
-        <div class="card-pigeon-link">
-          <%= link_to "Edit",
-                      edit_pigeon_path(pigeon),
-                      class: 'btn-flat'
-                      %>
-
-          <%= link_to "Delete",
-                    pigeon_path(pigeon),
-                    data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
-                    class: 'btn-flat'%>
+              <%= link_to "Delete",
+                        pigeon_path(pigeon),
+                        data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+                        class: 'btn-flat'%>
+            </div>
           </div>
-      </div>
-    </div>
-    <% end %>
-
+      <% end %>
+  </div>
 </div>
