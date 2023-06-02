@@ -1,10 +1,27 @@
-<h1>Bookings</h1>
-<h2>What would you like to do?</h2>
+<h1 id="booking"><strong>Booking<strong></h1>
 
-<div class="card-trip">
-  <%= render "bookings/booking_rent_from", bookings: @bookings %>
-</div>
+<div class= "container">
+  <div class="card-booking">
 
-<div class="card-trip">
-  <%= render "bookings/booking_rent_to", bookings: @bookings %>
+    <button type="button" class="card-trip-booking"
+        onclick="location.href='bookings/booking_rent_to'"
+        style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1589512842653-c7ccbec46027?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1674&q=80)">
+      <div class="card-trip-infos-booking">
+        <div>
+          <h1><strong><%= link_to "Rent To Others", rent_to_path, class: "text-white"%></strong></h1>
+        </div>
+      </div>
+    </button>
+
+
+    <button class="card-trip-booking"
+    onclick="location.href='bookings/booking_rent_from'"
+        style=" background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1645536737886-35e54e2ced04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80)">
+        <div class="card-trip-infos-booking">
+          <div>
+            <h1><strong><%= link_to "Rent From Others", rent_from_path, class: "text-white"%></strong></h1>
+          </div>
+    </button>
+
+    </div>
 </div>

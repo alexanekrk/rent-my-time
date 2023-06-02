@@ -1,0 +1,57 @@
+.name {
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: white;
+  box-shadow: 0 0.1rem 0.7rem rgba(0,0,0,.05);
+  margin-top: 0;
+  padding: 24px;
+}
+
+.map {
+  position: relative;
+  margin-bottom: 150px;
+}
+
+.i {
+  position: absolute;
+  bottom: 260px;
+  left: 100px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.form {
+  border: 1px solid rgb(221, 221, 221);
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  height: 350px;
+}
+
+.box {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 50px;
+  margin-right: 120px;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-around;
+}
+
+.lt-box {
+  border: 1px solid rgb(221, 221, 221);
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 12px;
+  width: 290px;
+  text-align: center;
+  height: 100px;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+
+h4 {
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

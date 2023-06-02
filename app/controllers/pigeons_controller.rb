@@ -7,6 +7,9 @@ class PigeonsController < ApplicationController
 
   def show
     @pigeon = Pigeon.find(params[:id])
+    @booking = Booking.new
+    @marker = [{ lat: @pigeon.latitude, lng: @pigeon.longitude }]
+    @owner = User.find(@pigeon.user_id)
   end
 
   def my_pigeons
@@ -50,6 +53,6 @@ class PigeonsController < ApplicationController
   private
 
   def params_pigeon
-    params.require(:pigeon).permit(:name, :color, :price, :age, :address, :photo)
+    params.require(:pigeon).permit(:name, :description, :color, :price, :age, :address, :photo)
   end
 end
