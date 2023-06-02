@@ -1,9 +1,9 @@
 <a href= <%= pigeon_path(pigeon) %>>
-  <div class="card-trip">
+  <div class="card-trip-pigeon">
       <% if pigeon.photo.attached? %>
         <%= cl_image_tag pigeon.photo.key, height: 300, width: 400, crop: :fill %>
       <% end %>
-    <div class="card-trip-infos">
+    <div class="card-trip-infos-pigeon">
 
       <div>
         <h2> <%= pigeon.name %></h2>
@@ -17,17 +17,19 @@
 
     </div>
 
-    <div class="card-pigeon-link d-flex justify-content-around mb-3">
-      <%= link_to "Edit",
-                  edit_pigeon_path(pigeon),
-                  class: 'btn-flat'
-                  %>
+    <div class="card-trip-infos-pigeon">
+      <div class="card-trip-link-pigeon">
+        <%= link_to "Edit",
+                    edit_pigeon_path(pigeon),
+                    class: 'btn-flat'
+                    %>
 
-      <%= link_to "Delete",
-                pigeon_path(pigeon),
-                data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
-                class: 'btn-flat'%>
+        <%= link_to "Delete",
+                  pigeon_path(pigeon),
+                  data: { turbo_method: :delete, turbo_confirm: 'Sure?' },
+                  class: 'btn-flat'%>
+      </div>
     </div>
-  </div>
+    </div>
   </div>
 </a>
