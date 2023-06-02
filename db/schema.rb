@@ -43,14 +43,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_02_155247) do
   end
 
   create_table "bookings", force: :cascade do |t|
-    t.date "start_date"
+    t.datetime "start_date"
     t.string "location"
     t.integer "quantity"
     t.bigint "pigeon_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "end_date"
+    t.datetime "end_date"
     t.index ["pigeon_id"], name: "index_bookings_on_pigeon_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
