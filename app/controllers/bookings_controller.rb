@@ -22,7 +22,7 @@ class BookingsController < ApplicationController
     pigeon = params[:pigeon_id]
     @booking = Booking.new(start_date: start, end_date: end_d , location: location, user_id: current_user.id, pigeon_id: pigeon )
     @booking.save
-    redirect_to bookings_path
+    redirect_to :rent_from
   end
 
   def destroy

@@ -1,6 +1,9 @@
-
+<br>
+<br>
 <div class="container">
   <h1>All the pigeons I've Booked</h1>
+    <% if @bookings.empty? %>
+    <% end %>
     <div class="cards">
         <% @bookings.each do |booking| %>
           <% @pigeon = Pigeon.find(booking.pigeon_id) %>
@@ -11,4 +14,7 @@
           <% end %>
         <% end %>
     </div>
+    <br>
+    <br>
+    <%= link_to "Back to my bookings", bookings_path, class:'btn btn-danger' %>
 </div>
