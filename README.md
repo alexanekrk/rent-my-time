@@ -21,7 +21,15 @@ You will need to create an account to access most features
 
 # Set Up
 
-Install extensions??
+Clone this repository. Create a .env file in the project directory. Add your OpenAI API key to the .env file as follows:
+
+OPENAI_API_KEY=your_api_key_here
+
+Then add your Cloudinary key to the .env file as follows:
+
+CLOUDINARY_URL=your_api_key_here
+
+Run: Bundle Install
 
 # Running the Script
 
